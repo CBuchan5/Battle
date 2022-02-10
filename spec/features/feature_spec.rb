@@ -14,7 +14,8 @@ feature 'Enter names' do
     fill_in :player_one, with: 'Charlotte'
     fill_in :player_two, with: 'Eddie'
     click_button 'Submit'
-    expect(page).to have_content "Charlotte Eddie"
+    expect(page).to have_content "Charlotte" 
+    expect(page).to have_content "Eddie"
   end
 end
 
