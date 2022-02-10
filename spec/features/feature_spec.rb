@@ -31,3 +31,11 @@ feature "play game", type: :feature do
     expect(page).to have_selector(:link_or_button, "Heal <3") 
   end
 end
+
+feature "first attack", type :feature do
+  scenario "attack player 2" do
+  
+  
+  end
+end  
+
