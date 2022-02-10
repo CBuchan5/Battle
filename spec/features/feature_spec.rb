@@ -32,10 +32,13 @@ feature "play game", type: :feature do
   end
 end
 
-feature "first attack", type :feature do
+feature "first attack", type: :feature do
   scenario "attack player 2" do
-  
-  
+    sign_in_and_play
+    click_button 'Attack!'
+    visit '/attack'
+    expect(page).to have_content("Player 2 takes damage!")
+    expect(page).to have_selector(:link_or_button, "Player 2, your turn!") 
   end
 end  
 
