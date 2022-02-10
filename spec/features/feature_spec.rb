@@ -21,7 +21,7 @@ end
 
 feature "play game", type: :feature do 
   scenario "display players hitpoints" do
-    visit '/play'
+    visit '/'
     fill_in :player_one, with: "Charlotte"
     fill_in :player_two, with: "Eddie"
     click_button 'Submit'
