@@ -10,10 +10,7 @@ end
 
 feature 'Enter names' do
   scenario "Display player names" do
-    visit '/'
-    fill_in :player_one, with: 'Charlotte'
-    fill_in :player_two, with: 'Eddie'
-    click_button 'Submit'
+    sign_in_and_play
     expect(page).to have_content "Charlotte" 
     expect(page).to have_content "Eddie"
   end
@@ -21,10 +18,7 @@ end
 
 feature "play game", type: :feature do 
   scenario "display players hitpoints" do
-    visit '/'
-    fill_in :player_one, with: "Charlotte"
-    fill_in :player_two, with: "Eddie"
-    click_button 'Submit'
+    sign_in_and_play
     expect(page).to have_content "Eddie: 50hp"
     expect(page).to have_content "Charlotte: 50hp"
   end
