@@ -21,6 +21,8 @@ end
 feature "play game", type: :feature do 
   scenario "display battle option buttons" do
   visit '/play'
+  expect(page).to have_content "opponent hp"
+  expect(page).to have_content "my hp"
   expect(page).to have_selector(:link_or_button, "Attack!")
   expect(page).to have_selector(:link_or_button, "Paralyse")
   expect(page).to have_selector(:link_or_button, "Sleep, zzz")
