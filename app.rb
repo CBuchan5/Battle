@@ -26,10 +26,12 @@ enable :sessions
   end
   
   get '/attack' do
+    @player_one = $player_one
+    @player_two = $player_two
     
-    @player_two = $player_two.name
+    @player_one.attack(@player_two)
+   
     erb :attack
-    # redirect '/play'
   end
   run! if @app_file == $0
 end
